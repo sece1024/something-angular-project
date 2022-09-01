@@ -1,0 +1,31 @@
+.login-container-body{
+  .login-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    background-color: antiquewhite;
+    left: 0;
+    right: 0;
+    top: 10%;
+    margin: auto;
+    width: 640px;
+    height: 480px;
+    .content-box {
+      flex: 1;
+      .login-btn {
+        cursor: pointer;
+        left: 0;
+        background-color: #EEE;
+        margin: 0.5em;
+        padding: 4px;
+        border-radius: 3px;
+        height: 1.8em;
+      }
+    }
+    .side-image-box{
+      flex: 1;
+    }
+  }
+}
+

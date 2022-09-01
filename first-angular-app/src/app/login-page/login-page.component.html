@@ -1,6 +1,23 @@
-<div>
-<p>login-page works!</p>
-  <nav>
-    <a routerLink="/overview">Click to see Overview Page</a>
-  </nav>
+<body class="login-container-body">
+<div class="login-container">
+  <div class="content-box">
+    <div class="input-box">
+      <div>
+        <label for="username">User name: </label>
+        <input id="username" [(ngModel)]="user.username" placeholder="input your username" >
+      </div>
+      <div>
+        <label for="password">Password: </label>
+        <input id="password" [(ngModel)]="user.password" placeholder="input your password" >
+      </div>
+    </div>
+    <button class="login-btn" (click)="test()">Login</button>
+  </div>
+  <div class="side-image-box">
+    <img src="favicon.ico" alt="">
+  </div>
 </div>
+<footer>
+  <a routerLink="/overview">Click to see Overview Page</a>
+</footer>
+</body>
