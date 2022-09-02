@@ -11,6 +11,8 @@ export class LoginPageComponent implements OnInit {
   test = () => {
     console.log('ok')
   };
+  username: string = '';
+  password: string = '';
 
   constructor() {
   }
@@ -18,4 +20,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitForm(name: string, password: string) {
+    console.log(name, ' has login','\npassword is ', password);
+  }
 }

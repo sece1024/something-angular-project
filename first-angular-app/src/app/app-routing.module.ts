@@ -7,7 +7,7 @@ import {OverviewPageComponent} from "./overview-page/overview-page.component";
 
 const routes: Routes = [
   {path: '', redirectTo: appConstant.LOGIN_PAGE, pathMatch: "full"},
-  {path: 'login', component: LoginPageComponent},
+  {path: appConstant.LOGIN_PAGE, component: LoginPageComponent},
   {path: appConstant.OVERVIEW_PAGE, component: OverviewPageComponent}
 ]
 

@@ -1,22 +1,24 @@
 <body class="login-container-body">
 <div class="login-container">
   <div class="content-box">
-    <div class="input-box">
-      <div>
-        <label for="username">User name: </label>
-        <input id="username" [(ngModel)]="user.username" placeholder="input your username" >
+    <ng-form class="login-form" (ngSubmit)="submitForm(user.username, user.password)">
+      <div class="form-group">
+        <label>User name: </label>
+        <input class="form-control" type="text" name="username" [(ngModel)]="user.username" placeholder="input your username" autofocus required>
       </div>
-      <div>
-        <label for="password">Password: </label>
-        <input id="password" [(ngModel)]="user.password" placeholder="input your password" >
+      <div class="form-group">
+        <label>Password: </label>
+        <input class="form-control" type="text" name="password" [(ngModel)]="user.password" placeholder="input your password" required>
       </div>
-    </div>
-    <button class="login-btn" (click)="test()">Login</button>
+    </ng-form>
+    <button type="submit" class="login-btn" (click)="test()">Login</button>
   </div>
+
   <div class="side-image-box">
-    <img src="favicon.ico" alt="">
+    <img class="image" src="favicon.ico" alt="">
   </div>
 </div>
+
 <footer>
   <a routerLink="/overview">Click to see Overview Page</a>
 </footer>

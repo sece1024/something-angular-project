@@ -13,6 +13,7 @@
     height: 480px;
     .content-box {
       flex: 1;
+      height: 100%;
       .login-btn {
         cursor: pointer;
         left: 0;
@@ -25,7 +26,24 @@
     }
     .side-image-box{
       flex: 1;
+      background-color: #4ff7ff;
+      height: 100%;
+      width: 100%;
+      .image{
+        height: 30%;
+        width: 50%;
+        margin: 138px 77px;
+      }
     }
   }
 }
 
+.login {
+  padding: 200px 20px;
+}
+
+.login > form {
+  border: solid 1px #999;
+  padding: 20px;
+  border-radius: 5px;
+}
