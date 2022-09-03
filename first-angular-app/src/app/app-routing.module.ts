@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
-import {LoginPageComponent} from "./login-page/login-page.component";
+import {LoginPageComponent} from "./page/login-page/login-page.component";
 import {appConstant} from "./app.constant";
-import {OverviewPageComponent} from "./overview-page/overview-page.component";
+import {OverviewPageComponent} from "./page/overview-page/overview-page.component";
 
 const routes: Routes = [
   {path: '', redirectTo: appConstant.LOGIN_PAGE, pathMatch: "full"},
