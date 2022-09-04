@@ -16,6 +16,10 @@
         <div id="cell9" (click)="move(8)">{{board[8]}}</div>
       </div>
     </div>
+    <div class="info-box">
+      <p class="text-count">Clicked count: {{clickedCount}}</p>
+      <button class="btn-reset" type="reset" (click)="reset()">Reset</button>
+    </div>
   </nav>
 </div>
 <footer class="overview-footer">2022.9.2 created by hgx.</footer>

@@ -7,11 +7,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OverviewPageComponent implements OnInit {
   board: number[] = [];
+  clickedCount: number = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.board = [1, 2, 3, 4, 5, 6, 7, 8, 0]
+    this.board = [1, 2, 3, 4, 5, 6, 7, 8, 0];
   }
 
   move(i: number): void {
@@ -24,18 +26,32 @@ export class OverviewPageComponent implements OnInit {
     }
   }
 
+  private addCount() {
+    this.clickedCount++;
+  }
+
+  reset(): void {
+    this.clearCount();
+
+  }
+
+  private clearCount() {
+    this.clickedCount = 0;
+    this.board = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+  }
+
   doMove(n: number): void {
     let moves = this.getMoves();
     let zeroIndex = this.getZero();
     let index = n;
-    // console.log("moves: ", moves);
     let ii = 0;
     for (; ii < moves.length; ii++) {
-      // console.log(moves[ii], " == ", index, moves[ii] == index);
       if (moves[ii] == index) {
         // console.log("可移动");
         this.board[zeroIndex] = this.board[index];
         this.board[index] = 0;
+        this.addCount();
+
       }
     }
   }
