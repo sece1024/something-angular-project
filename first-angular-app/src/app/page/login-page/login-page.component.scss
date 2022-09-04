@@ -1,4 +1,10 @@
 .login-container-body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background: url('../../../assets/background-login-page.jpg');
   .login-container {
     display: flex;
     flex-direction: row;
