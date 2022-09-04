@@ -22,7 +22,7 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout: 
-          path: "$CIRCLE_WORKING_DIRECTORY/something-angular-project/first-angular-app"
+          path: "$CIRCLE_WORKING_DIRECTORY/something-angular-project"
       - run:
             name: List all files
             command: ls -la
