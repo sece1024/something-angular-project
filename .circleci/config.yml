@@ -24,6 +24,12 @@ jobs:
       - checkout:
           path: ~/something-angular-project/first-angular-app
       - run:
+            name: List all files
+            command: ls -la
+      - run:
+            name: Look path
+            command: echo $pwd         
+      - run:
             name: Run start command in recipe folder
             command: npm --prefix ./first-angular-app run start  
       - run:
