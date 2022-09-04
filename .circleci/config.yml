@@ -23,6 +23,12 @@ jobs:
       # Checkout the code as the first step.
       - checkout:
           path: ~/something-angular-project/first-angular-app
+      - run:
+            name: Run start command in recipe folder
+            command: npm --prefix ./first-angular-app run start  
+      - run:
+            name: Run start command in recipe folder
+            command: npm --prefix run start                    
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
       - node/install-packages:
