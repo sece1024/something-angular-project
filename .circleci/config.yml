@@ -22,13 +22,10 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout:
-          path: ~/project/something-angular-project/first-angular-app
+          path: ~/project/something-angular-project
       - run:
             name: List all files
             command: pwd & ls -la
-      - run:
-            name: Look path
-            command: pwd
       - run:
           name: jump to app-dir and ls
           command: cd first-angular-app && pwd && ls -la
