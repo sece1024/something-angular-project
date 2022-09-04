@@ -21,8 +21,7 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       # Checkout the code as the first step.
-      - checkout:
-          path: ~/something-angular-project/
+      - checkout
       - run:
             name: List all files
             command: ls -la
