@@ -3,23 +3,10 @@
 <div class="overview-body">
   <nav class="overview-navigation">This is side nav</nav>
   <nav class="overview-content">
-    <div class="border-box">
-      <div id="board">
-        <div id="cell1" (click)="move(0)">{{board[0]}}</div>
-        <div id="cell2" (click)="move(1)">{{board[1]}}</div>
-        <div id="cell3" (click)="move(2)">{{board[2]}}</div>
-        <div id="cell4" (click)="move(3)">{{board[3]}}</div>
-        <div id="cell5" (click)="move(4)">{{board[4]}}</div>
-        <div id="cell6" (click)="move(5)">{{board[5]}}</div>
-        <div id="cell7" (click)="move(6)">{{board[6]}}</div>
-        <div id="cell8" (click)="move(7)">{{board[7]}}</div>
-        <div id="cell9" (click)="move(8)">{{board[8]}}</div>
-      </div>
-    </div>
     <div class="info-box">
-      <p class="text-count">Clicked count: {{clickedCount}}</p>
-      <button class="btn-reset" type="reset" (click)="reset()">Reset</button>
+      <button class="btn-reset" type="reset" (click)="child1.reset()">Reset</button>
     </div>
+    <app-digital-board #child1></app-digital-board>
   </nav>
 </div>
 <footer class="overview-footer">2022.9.2 created by hgx.</footer>

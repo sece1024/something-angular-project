@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterLink, RouterLinkWithHref, RouterOutlet} from "@angular/router";
 import { OverviewPageComponent } from './page/overview-page/overview-page.component';
 import {FormsModule} from "@angular/forms";
+import { DigitalBoardComponent } from './digital-board/digital-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    OverviewPageComponent
+    OverviewPageComponent,
+    DigitalBoardComponent
   ],
   imports: [
     BrowserModule,
