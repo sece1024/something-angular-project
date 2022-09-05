@@ -20,4 +20,12 @@ describe('LoginPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should verify username and password when login', function () {
+    const spy = spyOn(component, 'verifyUser');
+    component.user.username = 'none1';
+    component.user.password = 'none2';
+    component.submitForm();
+    expect(spy).toHaveBeenCalledOnceWith('none1', 'none2');
+  });
 });

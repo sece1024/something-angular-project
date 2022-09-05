@@ -5,17 +5,6 @@ import {UserService} from "../../services/user.service";
 import {appConstant} from "../../app.constant";
 import {User} from "../../user";
 
-function verifyUser(name: string, password: string) {
-  let result = false;
-  USERS.forEach(u=>{
-    if (u.username === name && u.password === password){
-      console.log(u);
-      result = true;
-    }
-  })
-
-  return result;
-}
 
 @Component({
   selector: 'app-login-page',
@@ -25,21 +14,30 @@ function verifyUser(name: string, password: string) {
 export class LoginPageComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
   }
-  user = new User();
 
-  username: string = '';
-  password: string = '';
+  user = new User();
 
   ngOnInit(): void {
   }
 
-  submitForm(name: string, password: string) {
-    if (verifyUser(name, password)) {
+  submitForm() {
+    if (this.verifyUser(this.user.username, this.user.password)) {
       this.router.navigate([appConstant.OVERVIEW_PAGE]).then(r => {
         console.log(r);
       })
-    }else {
+    } else {
       alert('用户名或密码错误')
     }
   };
+
+  public verifyUser(name: string, password: string) {
+    let result = false;
+    USERS.forEach(userItem => {
+      if (userItem.username === name && userItem.password === password) {
+        result = true;
+      }
+    })
+
+    return result;
+  }
 }
