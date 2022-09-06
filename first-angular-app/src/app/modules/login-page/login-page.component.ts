@@ -1,27 +1,30 @@
 import {Component, OnInit} from '@angular/core';
-import {USERS} from "../../mock-users";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {appConstant} from "../../app.constant";
-import {User} from "../../user";
+import {FormControl, FormGroup} from "@angular/forms";
 
 
 @Component({
-  selector: 'app-login-page',
+  selector: 'app-login-modules',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
+  loginForm: any = new FormGroup(({
+    username: new FormControl(''),
+    password: new FormControl('')
+  }))
   constructor(private userService: UserService, private router: Router) {
   }
-
-  user = new User();
 
   ngOnInit(): void {
   }
 
-  submitForm() {
-    if (this.verifyUser(this.user.username, this.user.password)) {
+  onSubmitForm() {
+    let username = this.loginForm.get('username')?.value;
+    let password = this.loginForm.get('password')?.value;
+    if (this.verifyUser(username, password)) {
       this.router.navigate([appConstant.OVERVIEW_PAGE]).then(r => {
         console.log(r);
       })
@@ -30,9 +33,10 @@ export class LoginPageComponent implements OnInit {
     }
   };
 
-  public verifyUser(name: string, password: string) {
+  public verifyUser(name: string | null | undefined, password: string | null | undefined) {
+    console.log('username: ', name, '\tpassword: ', password)
     let result = false;
-    USERS.forEach(userItem => {
+    this.userService.getUsers().forEach(userItem => {
       if (userItem.username === name && userItem.password === password) {
         result = true;
       }
