@@ -1,13 +1,19 @@
-<div class="border-box">
-  <div id="board">
-    <div id="cell1" (click)="move(0)">{{board[0]}}</div>
-    <div id="cell2" (click)="move(1)">{{board[1]}}</div>
-    <div id="cell3" (click)="move(2)">{{board[2]}}</div>
-    <div id="cell4" (click)="move(3)">{{board[3]}}</div>
-    <div id="cell5" (click)="move(4)">{{board[4]}}</div>
-    <div id="cell6" (click)="move(5)">{{board[5]}}</div>
-    <div id="cell7" (click)="move(6)">{{board[6]}}</div>
-    <div id="cell8" (click)="move(7)">{{board[7]}}</div>
-    <div id="cell9" (click)="move(8)">{{board[8]}}</div>
-  </div>
+<div id="board">
+  <div [appBoardChange]="'#f4ededc9'" id="cell1" (click)="move(0)">{{board[0]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell2" (click)="move(1)">{{board[1]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell3" (click)="move(2)">{{board[2]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell4" (click)="move(3)">{{board[3]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell5" (click)="move(4)">{{board[4]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell6" (click)="move(5)">{{board[5]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell7" (click)="move(6)">{{board[6]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell8" (click)="move(7)">{{board[7]}}</div>
+  <div [appBoardChange]="'#f4ededc9'" id="cell9" (click)="move(8)">{{board[8]}}</div>
 </div>
+
+<!--<div class="border-box">-->
+<!--  <ul>-->
+<!--    <li style="list-style: none" *ngFor="let number of array">-->
+<!--      <div id="cell{{number}}" (click)="move(number)"></div>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
