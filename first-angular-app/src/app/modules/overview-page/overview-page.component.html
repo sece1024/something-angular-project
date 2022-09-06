@@ -3,10 +3,10 @@
 <div class="overview-body">
   <nav class="overview-navigation">This is side nav</nav>
   <nav class="overview-content">
+    <app-digital-board #child1></app-digital-board>
     <div class="info-box">
       <button class="btn-reset" type="reset" (click)="child1.reset()">Reset</button>
     </div>
-    <app-digital-board #child1></app-digital-board>
   </nav>
 </div>
 <footer class="overview-footer">2022.9.2 created by hgx.</footer>

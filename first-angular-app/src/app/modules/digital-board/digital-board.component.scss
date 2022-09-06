@@ -1,4 +1,3 @@
-
 .border-box {
   align-items: center;
   position: relative;
@@ -35,8 +34,8 @@
     width: 149px;
     height: 149px;
     box-shadow: 1px 1px 2px #099868;
-    background-color: #134849;
-    color: #eff4ed;
+    background-color: rgb(154 224 30 / 89%);
+    color: #2c312ae8;
     text-align: center;
     font-size: 60px;
     line-height: 150px;
@@ -45,7 +44,7 @@
   }
 
   #board div:hover {
-    color: rgb(208, 34, 34);
+    color: #f4ededc9;;
     font-size: 140px;
   }
 
