@@ -22,9 +22,10 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmitForm() {
-    let username = this.loginForm.get('username')?.value;
-    let password = this.loginForm.get('password')?.value;
+    let username:string = this.loginForm.get('username')?.value;
+    let password:string = this.loginForm.get('password')?.value;
     if (this.verifyUser(username, password)) {
+      this.saveCookies(username, password);
       this.router.navigate([appConstant.OVERVIEW_PAGE]).then(r => {
         console.log(r);
       })
@@ -43,5 +44,18 @@ export class LoginPageComponent implements OnInit {
     })
 
     return result;
+  }
+
+  saveCookies(key: string, value: string) {
+    this.createCookie(key, value, 7);
+  }
+  createCookie(name: string, value: string, days: number) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
   }
 }

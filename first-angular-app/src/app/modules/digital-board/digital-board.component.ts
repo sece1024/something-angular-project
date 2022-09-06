@@ -11,22 +11,24 @@ export class DigitalBoardComponent implements OnInit {
   originBoard = [1, 2, 3, 4, 5, 6, 7, 8, 0];
   clickedCount: number = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   move(index: number): void {
     console.log("you click ", this.board[index]);
+    let isOrigin = this.board.toString() === this.originBoard.toString();
     if (this.board[index] != 0) {
-      this.doMove(index);
-      if (this.board.toString() == this.originBoard.toString()) {
-        alert("You Win!");
-      }
+      this.doMove(index).then(response => {
+        if (!isOrigin && response) {
+          alert("You Win!");
+        }
+      });
     }
   }
-
-  doMove(indexShouldMove: number): void {
+  async doMove(indexShouldMove: number): Promise<boolean> {
     let moves = this.getMoves();
     let zeroIndex = this.getZeroIndex();
     for (let index = 0; index < moves.length; index++) {
@@ -36,6 +38,8 @@ export class DigitalBoardComponent implements OnInit {
         this.addCount();
       }
     }
+    return this.board.toString() === this.originBoard.toString();
+
   }
 
   private addCount() {
