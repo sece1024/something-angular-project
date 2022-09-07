@@ -15,6 +15,20 @@ export class DigitalBoardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initRandom(20);
+  }
+
+  initRandom(moveCount: number) {
+    for (let i = 0; i < moveCount; i++) {
+      let moves = this.getMoves();
+      let len = moves.length;
+      let r = Math.random();
+      this.doMove(moves[parseInt(String(r * len))]).then(r =>{
+        if (r){
+          this.initRandom(1);
+        }
+      });
+    }
   }
 
   move(index: number): void {
@@ -28,6 +42,7 @@ export class DigitalBoardComponent implements OnInit {
       });
     }
   }
+
   async doMove(indexShouldMove: number): Promise<boolean> {
     let moves = this.getMoves();
     let zeroIndex = this.getZeroIndex();
@@ -90,4 +105,7 @@ export class DigitalBoardComponent implements OnInit {
     return moves;
   }
 
+  start() {
+    this.initRandom(50);
+  }
 }

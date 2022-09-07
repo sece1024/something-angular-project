@@ -1,11 +1,18 @@
 <body class="root-container">
-<header class="overview-header">This is a header</header>
+<header class="overview-header">To be done</header>
 <div class="overview-body">
-  <nav class="overview-navigation">This is side nav</nav>
+  <nav class="overview-navigation">
+    <h2>Eight Digital</h2>
+    <p>Try to restore the digital board to </p>
+    <p>[1, 2, 3]</p>
+    <p>[4, 5, 6]</p>
+    <p>[7, 8, 0]</p>
+  </nav>
   <nav class="overview-content">
     <app-digital-board #child1></app-digital-board>
     <div class="info-box">
-      <button class="btn-reset" type="reset" (click)="child1.reset()">Reset</button>
+      <button class="btn btn-reset" type="reset" (click)="child1.reset()">Reset</button>
+      <button class="btn btn-start" type="reset" (click)="child1.start()">Start</button>
     </div>
   </nav>
 </div>
